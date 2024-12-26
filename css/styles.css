@@ -3,6 +3,55 @@ body {
   color: #434455;
   background-color: #ffffff;
 }
+
+img {
+  display: block;
+}
+
+/* #region приховуєм елемент */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* #endregion приховуєм елемент*/
+
+/* #region Обнуляєм дефолтні маржини від браузера */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* #endregion Обнуляєм дефолтні маржини від браузера*/
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding-top: 120px;
+}
+
+.section-list {
+  gap: 24px;
+}
 .li-title {
   font-weight: 500;
   font-size: 20px;
@@ -10,6 +59,11 @@ body {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
+
+.li-title {
+  margin-bottom: 8px;
+}
+
 .text {
   font-weight: 400;
   font-size: 16px;
@@ -24,6 +78,7 @@ body {
   text-align: center;
   color: #2e2f42;
   text-transform: capitalize;
+  margin-bottom: 72px;
 }
 /* #region скидуєм стилі */
 a {
@@ -32,6 +87,9 @@ a {
 
 ul,
 ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 /* #endregion скидуєм стилі*/
@@ -42,7 +100,17 @@ button {
 /* #region header */
 .main-header {
 }
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+}
 .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav .logo {
+  margin-right: 76px;
 }
 .logo {
   font-family: "Raleway", sans-serif;
@@ -66,6 +134,8 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  padding: 24px 0;
+  display: block;
 }
 .nav-item-link:hover,
 .nav-item-link:focus,
@@ -74,12 +144,24 @@ button {
   color: #404bbf;
 }
 
+.contact-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
 .contact-list .link {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  padding: 24px 0;
+  display: block;
 }
 .main-header .address {
   font-style: normal;
@@ -90,6 +172,7 @@ button {
 .hero {
   background-color: #2e2f42;
   text-align: center;
+  padding: 188px 0;
 }
 .hero-title {
   font-weight: 700;
@@ -98,35 +181,97 @@ button {
   letter-spacing: 0.02em;
   text-align: center;
   color: #ffffff;
+  max-width: 496px;
+  margin: 0 auto;
 }
 .hero-btn {
+  display: block;
+  margin: 0 auto;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: #4d5ae5;
+  margin-top: 48px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  min-width: 169px; /* min-width чтобы влезло 2 слова*/
 }
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: #404bbf;
 }
 /* #endregion hero */
+
+/* #region Features section */
+.features-list {
+  display: flex;
+}
+.features-list .item {
+  flex-basis: 264px;
+  flex-shrink: 0;
+}
+.features {
+  padding: 120px 0;
+}
+/* #endregion Features section */
+
 /* #region Our Team */
 .team {
   background-color: #f4f4fd;
+}
+.team.container {
+  padding-top: 120px;
+  /* padding-bottom: 46px; */
+}
+.team-list {
+  display: flex;
 }
 .team-list .item {
   background-color: #ffffff;
   text-align: center;
 }
+.section-list .card-text {
+  padding: 32px 0;
+}
 /* #endregion Our Team */
+
+/* #region Our Portfolio */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 48px;
+}
+.portfolio-list .item {
+  flex-basis: calc(100% - 48px) / 3;
+}
+.portfolio-list .card-text {
+  padding-left: 16px;
+  padding-right: 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
+.portfolio.section {
+  padding-bottom: 130px;
+}
+/* #endregion Our Portfolio */
+
 /* #region footer */
 .main-footer {
   background-color: #2e2f42;
   color: #f4f4fd;
+  padding: 100px 0;
 }
 .accent {
   color: #f4f4fd;
+}
+
+.main-footer .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.main-footer .text {
+  width: 264px;
 }
 /* #endregion footer*/
